@@ -2,14 +2,21 @@ import { useState } from "react";
 import personWithLapton from "./assets/personWithLapton.svg";
 import waves from "./assets/waves.jpg";
 const App = () => {
-  const [loginData, setLoginData] = useState({ username: "", password: "" });
+  const [user, setUser] = useState({ email: "", password: "" });
 
-  function handleSubmit() {}
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
 
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { id, value } = event.target;
-    setLoginData((prev) => ({ ...prev, [id]: value }));
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (user.email === "admin@demo.com" && user.password === "admin") {
+      console.log("Form Submitted");
+    } else {
+      console.log("Wrong Credentials");
+    }
+  };
 
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-gray-100 overflow-hidden">
@@ -29,16 +36,17 @@ const App = () => {
 
           <form onSubmit={handleSubmit} className="pt-4 mt-10 flex flex-col">
             <div className="flex flex-col gap-2">
-              <label className="text-blue-600 text-sm" htmlFor="username">
+              <label className="text-blue-600 text-sm" htmlFor="email">
                 Username
               </label>
               <input
-                value={loginData.username}
-                onChange={handleChange}
-                id="username"
                 type="email"
+                value={user.email}
+                name="email"
+                onChange={handleChange}
+                id="email"
                 className="border-b-2 border-blue-700 focus:outline-none pb-1 pt-2"
-                placeholder="Enter username"
+                placeholder="Enter email"
                 required
               />
             </div>
@@ -47,10 +55,11 @@ const App = () => {
                 Password
               </label>
               <input
-                value={loginData.password}
+                type="password"
+                value={user.password}
+                name="password"
                 onChange={handleChange}
                 id="password"
-                type="password"
                 className="border-b-2 border-blue-700 focus:outline-none pb-1 pt-2"
                 placeholder="Enter password"
                 required
