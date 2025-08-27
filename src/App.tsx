@@ -1,8 +1,13 @@
 import { useState } from "react";
 import personWithLapton from "./assets/personWithLapton.svg";
 import waves from "./assets/waves.jpg";
+import { useNavigate } from "react-router";
+
 const App = () => {
   const [user, setUser] = useState({ email: "", password: "" });
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -13,8 +18,9 @@ const App = () => {
     e.preventDefault();
     if (user.email === "admin@demo.com" && user.password === "admin") {
       console.log("Form Submitted");
+      navigate("/dashboard");
     } else {
-      console.log("Wrong Credentials");
+      setErrorMessage("Wrong Credentials");
     }
   };
 
@@ -69,6 +75,8 @@ const App = () => {
                 Forgot your password
               </p>
             </div>
+
+            {errorMessage && <p className="text-red-600">{errorMessage}</p>}
 
             <button className="text-xl bg-gradient-to-r from-orange-500 to-orange-300 text-white p-6 mt-14 w-[220px] rounded-4xl hover:bg-blue-700 self-end cursor-pointer">
               Login
