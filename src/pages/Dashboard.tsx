@@ -37,7 +37,28 @@ const Dashboard = () => {
             <div className="w-[30px] h-[30px] border rounded-full"></div>
           </div>
 
-          <div className="border w-[90%] rounded-2xl h-[100px] mx-auto mt-4"></div>
+          <div className="border border-gray-300 w-[90%] rounded-2xl h-[120px] mx-auto mt-4">
+            <div className="flex gap-2 justify-center p-2">
+              <div className="border-gray-300 border-r-2 w-[33%] h-[60px]">
+                <div className="border w-[40px] h-[40px] mx-auto mt-3 rounded-xl border-gray-400"></div>
+              </div>
+              <div className="border-gray-300 border-r-2 w-[33%] h-[60px] pt-1">
+                <div className="flex flex-col justify-center ml-2 gap-0.5">
+                  <p className="text-sm text-gray-400">My Balance</p>
+                  <p className="text-xl">$121,98</p>
+                </div>
+              </div>
+              <div className="border-gray-300 w-[33%] h-[60px]">
+                <div className="flex flex-col justify-center ml-2 gap-0.5 pt-1">
+                  <p className="text-sm text-gray-400">My Coins</p>
+                  <p className="text-xl">1,295</p>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-300"> </div>
+
+            <p className="p-2 pl-10">7 Vouchers Available</p>
+          </div>
         </div>
 
         <div className="mt-6 p-4">
