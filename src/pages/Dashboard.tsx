@@ -18,8 +18,8 @@ import account from "../../public/account.png";
 const Dashboard = () => {
   return (
     <div className="flex w-screen items-center justify-center bg-gray-100 overflow-hidden">
-      <div className="lg:w-[500px] w-full bg-white p-2 relative">
-        <div className="w-full h-[100px] fixed bottom-0 left-1/2 transform -translate-x-1/2 lg:w-[500px] bg-white">
+      <div className="lg:w-[500px] w-full bg-white p-2 relative ">
+        <div className="w-full h-[100px] border fixed bottom-0 left-1/2 transform -translate-x-1/2 lg:w-[500px] bg-white">
           <div className="flex p-4 justify-around">
             <div className="">
               <div className="w-[50px] h-[50px] rounded-md">
@@ -176,7 +176,7 @@ const Dashboard = () => {
             </div>
 
             <div className="mt-4 flex flex-col gap-4 pb-20">
-              <div className="w-[95%] bg-gray-100 h-[65px] mx-auto rounded-2xl p-4">
+              <div className="w-full bg-gray-100 h-[65px] mx-auto rounded-2xl p-4">
                 <div className="flex justify-between">
                   <div className="flex gap-4">
                     <div className=" w-[35px] h-[35px]">
@@ -198,7 +198,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[95%] bg-gray-100 h-[65px] mx-auto rounded-2xl p-4">
+              <div className="w-full bg-gray-100 h-[65px] mx-auto rounded-2xl p-4">
                 <div className="flex justify-between">
                   <div className="flex gap-4">
                     <div className=" w-[35px] h-[35px] ">
