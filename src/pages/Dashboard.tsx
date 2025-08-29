@@ -19,7 +19,7 @@ const Dashboard = () => {
   return (
     <div className="flex w-screen items-center justify-center bg-gray-100 overflow-hidden">
       <div className="lg:w-[500px] w-full bg-white p-2 relative ">
-        <div className="w-full h-[100px] border fixed bottom-0 left-1/2 transform -translate-x-1/2 lg:w-[500px] bg-white">
+        <div className="w-full h-[100px] fixed bottom-0 left-1/2 transform -translate-x-1/2 lg:w-[500px] bg-white">
           <div className="flex p-4 justify-around">
             <div className="">
               <div className="w-[50px] h-[50px] rounded-md">
